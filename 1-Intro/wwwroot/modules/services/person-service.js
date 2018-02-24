@@ -42,6 +42,7 @@
          * @returns {Promise<Object>}
          */
         loadByIdPromise(id) {
+            // about promises https://learn.javascript.ru/promise
             this._loader.start();
             const xhr = new XMLHttpRequest();
             xhr.open('GET', `https://swapi.co/api/people/${id}/`, true);
