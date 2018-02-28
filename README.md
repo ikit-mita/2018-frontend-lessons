@@ -7,6 +7,7 @@
 - [Лицо](https://codepen.io/sashatran/pen/bgajNZ)
 - [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 - [Современный учебник Javascript](http://learn.javascript.ru/)
+- [Подборка материалов](https://github.com/andrew--r/frontend-case-studies)
 
 API: https://swapi.co/
 
