@@ -13,4 +13,12 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.2" />
   </ItemGroup>
 
+  <Target Name="RestoreNpm" AfterTargets="restore">
+    <Exec Command="echo === npm install ===" />
+    <Exec Command="npm install" />
+  </Target>
+  <Target Name="BuildClient" BeforeTargets="Build">
+    <Exec Command="echo === npm run build ===" />
+    <Exec Command="npm run build" />
+  </Target>
 </Project>

@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Net.Http.Headers;
 
 namespace Build
 {
@@ -33,7 +35,7 @@ namespace Build
                 app.UseExceptionHandler("/Home/Error");
             }
 
-            app.UseStaticFiles();
+            app.UseStaticFiles(new StaticFileOptions { OnPrepareResponse = SetCacheControlHeader });
 
             app.UseMvc(routes =>
             {
@@ -41,6 +43,13 @@ namespace Build
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+        }
+
+        private static void SetCacheControlHeader(StaticFileResponseContext context)
+        {
+            const int durationInSeconds = 60 * 60 * 24;
+            context.Context.Response.Headers[HeaderNames.CacheControl] =
+                "public,max-age=" + durationInSeconds;
         }
     }
 }
