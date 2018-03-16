@@ -12,8 +12,12 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.2" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="client\" />
-  </ItemGroup>
-
+  <Target Name="RestoreNpm" AfterTargets="restore">
+    <Exec Command="echo === yarn install ===" />
+    <Exec Command="cd client &amp;&amp; yarn install" />
+  </Target>
+  <Target Name="BuildClient" BeforeTargets="Build">
+    <Exec Command="echo === yarn build ===" />
+    <Exec Command="cd client &amp;&amp; yarn build" />
+  </Target>
 </Project>
