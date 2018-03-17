@@ -1,15 +1,18 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import home from '@/pages/home'
+import swViewer from '@/pages/sw-viewer'
 
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    }
-  ]
+  routes: [{
+    path: '/',
+    name: 'home',
+    component: home
+  }, {
+      path: '/sw',
+      name: 'sw-viewer',
+      component: swViewer
+  }]
 })

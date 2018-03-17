@@ -1,23 +1,38 @@
 <template>
   <div id="app">
+    <nav>
+      <ul>
+        <li><router-link to="/">Home</router-link> </li>
+        <li><router-link to="/sw">Star Wars Viewer</router-link> </li>
+      </ul>
+    </nav>
     <img src="./assets/logo.png">
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
 <script>
-export default {
-  name: 'App'
-}
+  import './components/person-face'
+  export default {
+    name: 'App'
+  }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  html, body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #DDFFF7;
+    margin-top: 10px;
+  }
+
+  .buttons-panel {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
 </style>
