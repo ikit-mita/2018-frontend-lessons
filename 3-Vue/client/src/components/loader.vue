@@ -1,5 +1,5 @@
 <template>
-  <div class="loader" :style="{ 'border-color': bgColor, 'border-top-color': color,width: size, height: size }"></div>
+  <div class="loader" :style="style"></div>
 </template>
 
 <script>
@@ -14,6 +14,16 @@
       size: {
         type: String,
         default: '120px'
+      }
+    },
+    computed: {
+      style: function() {
+        return {
+          'border-color': this.bgColor,
+          'border-top-color': this.color,
+          width: this.size,
+          height: this.size
+        };
       }
     }
   });

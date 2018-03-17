@@ -1,13 +1,13 @@
 <template>
-  <div class="head">
-    <div class="hair">
+  <div class="head" :style="{ 'box-shadow': `inset 0 40px 0 0 ${this.hairColors[this.hairColor]}` }">
+    <div class="hair" :style="{ 'border-top-color': this.hairColors[this.hairColor] }">
       <div></div>
       <div></div>
       <div></div>
       <div></div>
       <div></div>
     </div>
-    <div class="eye"></div>
+    <div class="eye" :style="{ background: this.eyeColors[this.eyeColor] }"></div>
     <div class="mouth"></div>
   </div>
 </template>
@@ -28,7 +28,7 @@
     data: function() {
       return {
         eyeColors: {
-          blue: 'blue'
+          blue: '#00c3ff'
         },
         hairColors: {
           blond: '#FAF0BE'

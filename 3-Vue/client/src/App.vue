@@ -2,11 +2,17 @@
   <div id="app">
     <nav>
       <ul>
-        <li><router-link to="/">Home</router-link> </li>
-        <li><router-link to="/sw">Star Wars Viewer</router-link> </li>
+        <li>
+          <router-link :to="{name:'main'}">Home</router-link>
+          <ul>
+            <li>
+              <router-link :to="{name:'main.loader'}">Loader</router-link>
+            </li>
+          </ul>
+        </li>
+        <li><router-link :to="{name:'sw-viewer'}">Star Wars Viewer</router-link> </li>
       </ul>
     </nav>
-    <img src="./assets/logo.png">
     <router-view />
   </div>
 </template>
@@ -27,6 +33,10 @@
     align-items: center;
     background: #DDFFF7;
     margin-top: 10px;
+  }
+
+  .router-link-active {
+    font-weight: bold;
   }
 
   .buttons-panel {
