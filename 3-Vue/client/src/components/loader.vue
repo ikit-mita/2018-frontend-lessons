@@ -6,7 +6,10 @@
   import Vue from 'vue';
   export default Vue.component('loader', {
     props: {
-      color: String,
+      color: {
+        type: String,
+        default: '#3498db'
+      },
       bgColor: {
         type: String,
         default: '#f3f3f3'
